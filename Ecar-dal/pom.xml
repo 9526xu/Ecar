@@ -29,5 +29,13 @@
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.Ecar</groupId>
+            <artifactId>Ecar-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
     </dependencies>
 </project>
