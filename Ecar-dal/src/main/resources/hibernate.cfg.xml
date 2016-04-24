@@ -48,7 +48,7 @@
 	<property name="format_sql">true</property>
 	<mapping resource="com.Ecar.dal.model/EcarTestDo.hbm.xml"/>
 
-	<!--<mapping resource="com/Ecar/dal/model/mapper/EcarTestDo.hbm.xml"/>-->
+
 
 
 </session-factory>
