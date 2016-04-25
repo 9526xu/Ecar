@@ -21,8 +21,10 @@ public class EcarTestDoTest {
 
         EcarTestDo ecarTestDo=new EcarTestDo();
 
+
         ecarTestDo.setAge(11);
         ecarTestDo.setName("张宝");
+
 
         session.save(ecarTestDo);
 

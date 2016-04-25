@@ -20,5 +20,5 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
         </dependency>
-    </dependencies>
+        </dependencies>
 </project>

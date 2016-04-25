@@ -7,7 +7,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-  <display-name>mini</display-name>
+  <display-name>Ecar</display-name>
 
   <!--配置文件位置，默认为/WEB-INF/applicationContext.xml-->
   <context-param>
@@ -137,9 +137,9 @@
     <url-pattern>*.json</url-pattern>
   </servlet-mapping>
 
-  <welcome-file-list>
-    <welcome-file>WEB-INF/template/hello.htm</welcome-file>
-  </welcome-file-list>
+  <!--<welcome-file-list>
+    <welcome-file>/index.jsp</welcome-file>
+  </welcome-file-list>-->
 
 
 </web-app>

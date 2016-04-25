@@ -12,7 +12,6 @@
         <module>Ecar-service</module>
         <module>Ecar-dal</module>
         <module>Ecar-common</module>
-        <module>Ecar-web</module>
     </modules>
     <packaging>pom</packaging>
 
