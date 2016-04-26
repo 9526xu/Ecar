@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by xiaohei on 16/4/25.
  */
 @RequestMapping("/test")
-@Controller
+@Controller("ecar")
 public class EcarTestDoController {
     @Autowired
     private IEcarTestDoService service;
