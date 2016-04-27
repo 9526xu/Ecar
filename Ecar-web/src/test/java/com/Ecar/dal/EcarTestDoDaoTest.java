@@ -22,4 +22,15 @@ public class EcarTestDoDaoTest {
 
         dao.saveEntity(ecarTestDo);
     }
+
+    @Test
+    public void testGetById(){
+        IEcarTestDoDao dao= (IEcarTestDoDao) SpringUtil.applicationContext.getBean(IEcarTestDoDao.SERVICE_NAME);
+
+        EcarTestDo ecarTestDo=dao.getEntityById(1);
+
+        System.out.println("name:"+ecarTestDo.getName()+"age:"+ecarTestDo.getAge());
+
+
+    }
 }
