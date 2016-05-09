@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.Ecar.dal.model.EcarOrderDo" table="ecar_order" schema="ecar">
+        <id name="orderId" column="orderID"/>
+        <property name="type" column="type"/>
+        <property name="userId" column="userID"/>
+        <property name="userName" column="userName"/>
+        <property name="userMobile" column="userMobile"/>
+        <property name="carId" column="carID"/>
+        <property name="orderTime" column="orderTime" type="timestamp"/>
+        <property name="orderStatus" column="orderStatus"/>
+        <property name="orderAmount" column="orderAmount"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.Ecar.dal.model.EcarCarinfoDo" table="ecar_carinfo" schema="ecar">
+        <id name="carId" column="carID"/>
+        <property name="name" column="name"/>
+        <property name="brand" column="brand"/>
+        <property name="province" column="province"/>
+        <property name="city" column="city"/>
+        <property name="color" column="color"/>
+        <property name="transferNum" column="transferNum"/>
+        <property name="age" column="age"/>
+        <property name="otherInfo" column="otherInfo"/>
+        <property name="upStatus" column="upStatus"/>
+        <property name="carStatus" column="carStatus"/>
+        <property name="amount" column="amount"/>
+    </class>
+</hibernate-mapping>

@@ -57,6 +57,7 @@
                     spring容器会去该包及子包下搜索所有的映射文件
                  -->
                 <value>classpath*:mapper/*.hbm.xml</value>
+
             </list>
         </property>
 
@@ -66,6 +67,8 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/ecar</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <!--<prop key="hibernate.connection.autocommit">true</prop>-->
                 <!-- 开启Hibernate二级缓存 -->
                 <!--<prop key="hibernate.cache.use_second_level_cache">true</prop>-->

@@ -33,6 +33,12 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <!--jstl-->
+
         <!--============================ jackson =========================== -->
 
         <dependency>
@@ -58,6 +64,7 @@
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>
         </dependency>
+
 
 
     </dependencies>

@@ -1,11 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
-<h2>注册</h2>
-<form action="/test/add" method="post">
-    姓名:<input name="name" type="text"><br>
-    年龄:<input name="age" type="text"><br>
-    <input type="submit" value="注册">
-</form>
+<label><h1>后台首页</h1></label>
+<a href="admin/index.jsp">后台首页</a>
 </body>
 </html>

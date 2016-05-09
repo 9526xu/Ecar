@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.Ecar.dal.model.EcarUserDo" table="ecar_user" schema="ecar">
+        <id name="userId" column="userID"/>
+        <property name="userName" column="userName"/>
+        <property name="loginPwd" column="loginPwd"/>
+        <property name="mobile" column="mobile"/>
+        <property name="email" column="email"/>
+        <property name="address" column="address"/>
+        <property name="sex" column="sex"/>
+        <property name="userType" column="userType"/>
+        <property name="remark" column="remark"/>
+    </class>
+</hibernate-mapping>

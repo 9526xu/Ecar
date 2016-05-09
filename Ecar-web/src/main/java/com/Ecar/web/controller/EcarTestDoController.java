@@ -33,7 +33,18 @@ public class EcarTestDoController {
         }
         System.out.println(model);
 
+        System.out.println("sadas");
+        System.out.println("asdas");
 
+        String a="asd";
+        System.out.println(a);
+        System.out.println("asdas");
+
+        System.out.println("asdasdasda");
+        System.out.println("asda");
+        System.out.println("dadasdaasd");
+        System.out.println("sdadasdasd");
+        System.out.println("sdadas");
         return "success";
     }
 
