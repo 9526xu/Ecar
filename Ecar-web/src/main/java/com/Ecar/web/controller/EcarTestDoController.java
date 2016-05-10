@@ -1,8 +1,8 @@
 package com.Ecar.web.controller;
 
 import com.Ecar.dal.model.EcarTestDo;
+import com.Ecar.dto.EcarTestForm;
 import com.Ecar.service.IEcarTestDoService;
-import com.Ecar.web.dto.EcarTestForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +45,7 @@ public class EcarTestDoController {
         System.out.println("dadasdaasd");
         System.out.println("sdadasdasd");
         System.out.println("sdadas");
+        System.out.println("dasda");
         return "success";
     }
 

@@ -13,4 +13,6 @@ public interface IEcarModelDao extends ICommonDao<EcarModelDo> {
     public static final String SERVICE_NAME="com.Ecar.dal.dao.IEcarModelDao";
 
     public List<EcarModelDo> getAllBrand();
+
+    List<EcarModelDo> getModelsByBrand(String brand);
 }

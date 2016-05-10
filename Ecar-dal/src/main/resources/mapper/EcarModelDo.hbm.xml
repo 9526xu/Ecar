@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.Ecar.dal.model.EcarModelDo" table="ecar_model" schema="ecar">
-        <id name="modelId" column="modelID"/>
+        <id name="modelId" column="modelID">
+            <generator class="identity"></generator>
+        </id>
         <property name="year" column="year"/>
         <property name="brand" column="brand"/>
         <property name="model" column="model"/>

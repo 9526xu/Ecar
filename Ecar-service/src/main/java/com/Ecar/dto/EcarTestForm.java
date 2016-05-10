@@ -1,8 +1,6 @@
-package com.Ecar.web.dto;
+package com.Ecar.dto;
 
 import org.hibernate.validator.constraints.NotBlank;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * Created by xiaohei on 16/4/25.

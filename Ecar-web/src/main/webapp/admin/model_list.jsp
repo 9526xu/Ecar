@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="dataTables_length" id="example1_length">
-                    <a href="#myModal" data-toggle="modal" >
+                    <a href="#" onclick="toAddModel()"  >
                         <span class="glyphicon glyphicon-plus"></span>
                         <span class="glyphicon-class">增加</span>
                     </a>
@@ -31,6 +31,11 @@
                         <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                             colspan="1"
                             aria-label="Rendering engine: activate to sort column descending"
+                            aria-sort="ascending">编号
+                        </th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                            colspan="1"
+                            aria-label="Rendering engine: activate to sort column descending"
                             aria-sort="ascending">车辆年份
                         </th>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"
@@ -46,7 +51,28 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr role="row" class="odd">
+                    <c:forEach items="${requestScope.modelList}" var="model">
+                        <tr role="row" >
+                            <td>${model.modelId}</td>
+                            <td>${model.year}</td>
+                            <td>${model.model}</td>
+                            <td>${model.modelCn}</td>
+                            <td>
+
+                                <a href="#" onclick="editModel(${model.modelId})">
+
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <span class="glyphicon-class">编辑</span>
+
+                                </a>
+                                <a href="#" onclick="deleteModel(${model.modelId})">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                    <span class="glyphicon-class">删除</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    <%--<tr role="row" class="odd">
                         <td class="sorting_1">1999</td>
                         <td>Somerset</td>
                         <td>野马</td>
@@ -81,7 +107,7 @@
                                 <span class="glyphicon-class">删除</span>
                             </a>
                         </td>
-                    </tr>
+                    </tr>--%>
                     </tbody>
 
                 </table>

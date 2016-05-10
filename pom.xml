@@ -229,6 +229,7 @@
             <artifactId>lombok</artifactId>
             <version>1.14.4</version>
         </dependency>
+        <!--=====================日志==================================-->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -236,7 +237,15 @@
         </dependency>
 
 
-        <!--=====================日志==================================-->
+
+
+
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
 
     </dependencies>
 

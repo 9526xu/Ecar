@@ -4,6 +4,7 @@ import com.Ecar.common.utils.SpringUtil;
 import com.Ecar.dal.model.EcarModelDo;
 import com.Ecar.dal.model.EcarTestDo;
 import org.junit.Test;
+import sun.org.mozilla.javascript.internal.ast.NewExpression;
 
 import java.util.List;
 
@@ -24,5 +25,27 @@ public class EcarModelDaoTest {
 
 
 
+    }
+
+    @Test
+    public void testGetAllModelByBrand(){
+        IEcarModelDao dao= (IEcarModelDao) SpringUtil.applicationContext.getBean(IEcarModelDao.SERVICE_NAME);
+        List<EcarModelDo> list=dao.getModelsByBrand("Audi");
+        for (EcarModelDo ecarModelDo : list) {
+            System.out.println(ecarModelDo.getModel()+":"+ecarModelDo.getModelCn());
+        }
+    }
+
+    @Test
+    public void testUpdateModel(){
+        IEcarModelDao dao= (IEcarModelDao) SpringUtil.applicationContext.getBean(IEcarModelDao.SERVICE_NAME);
+
+
+        EcarModelDo ecarModelDo= new EcarModelDo();
+        ecarModelDo.setModelId(7271);
+        ecarModelDo.setBrand("Aptera");
+        ecarModelDo.setModel("mx-666");
+
+        dao.updateEntity(ecarModelDo);
     }
 }

@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!--
@@ -13,19 +12,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="/admin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Theme style-->
-    <link rel="stylesheet" href="/admin/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="/admin/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/dist/css/skins/skin-blue.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,14 +88,14 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     使用者姓名
@@ -129,7 +128,7 @@ desired effect
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>使用者姓名</p>
@@ -153,7 +152,7 @@ desired effect
                     </ul>
                 </li>
                 <!--品牌管理-->
-                <li class="active"><a href="car_model.jsp"><i class="fa fa-link"></i> <span>品牌管理</span></a></li>
+                <li class="active"><a href="${pageContext.request.contextPath }/admin/model/home"><i class="fa fa-link"></i> <span>品牌管理</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -194,155 +193,86 @@ desired effect
                     </div>
 
                 </div>
-                <!-- /.box-header -->
-                <%--<div class="box-body">--%>
-                    <%--<div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">--%>
-                        <%--<div class="row">--%>
-                            <%--<div class="col-sm-6">--%>
-                                <%--<div class="dataTables_length" id="example1_length">--%>
-                                    <%--<a href="#myModal" data-toggle="modal" >--%>
-                                        <%--<span class="glyphicon glyphicon-plus"></span>--%>
-                                        <%--<span class="glyphicon-class">增加</span>--%>
-                                    <%--</a>--%>
-                                <%--</div>--%>
 
-                            <%--</div>--%>
-                            <%--<div class="col-sm-6"></div>--%>
-                        <%--</div>--%>
-                        <%--<div class="row">--%>
-                            <%--<div class="col-sm-12">--%>
-
-                                <%--<table id="example2" class="table  table-bordered table-hover  dataTable" role="grid"--%>
-                                       <%--aria-describedby="example2_info">--%>
-                                    <%--<thead>--%>
-                                    <%--<tr role="row">--%>
-                                        <%--<th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"--%>
-                                            <%--colspan="1"--%>
-                                            <%--aria-label="Rendering engine: activate to sort column descending"--%>
-                                            <%--aria-sort="ascending">车辆年份--%>
-                                        <%--</th>--%>
-                                        <%--<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"--%>
-                                            <%--colspan="1" aria-label="Browser: activate to sort column ascending">车辆型号--%>
-                                        <%--</th>--%>
-                                        <%--<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"--%>
-                                            <%--colspan="1" aria-label="Platform(s): activate to sort column ascending">--%>
-                                            <%--车辆型号中文名--%>
-                                        <%--</th>--%>
-                                        <%--<th class="sorting" tabindex="0" aria-controls="example2" rowspan="1"--%>
-                                            <%--colspan="1" aria-label="CSS grade: activate to sort column ascending">操作--%>
-                                        <%--</th>--%>
-                                    <%--</tr>--%>
-                                    <%--</thead>--%>
-                                    <%--<tbody>--%>
-                                    <%--<tr role="row" class="odd">--%>
-                                        <%--<td class="sorting_1">1999</td>--%>
-                                        <%--<td>Somerset</td>--%>
-                                        <%--<td>野马</td>--%>
-                                        <%--<td>--%>
-
-                                            <%--<a href="#">--%>
-
-                                                <%--<span class="glyphicon glyphicon-pencil"></span>--%>
-                                                <%--<span class="glyphicon-class">编辑</span>--%>
-
-                                            <%--</a>--%>
-                                            <%--<a href="#">--%>
-                                                <%--<span class="glyphicon glyphicon-remove"></span>--%>
-                                                <%--<span class="glyphicon-class">删除</span>--%>
-                                            <%--</a>--%>
-                                        <%--</td>--%>
-                                    <%--</tr>--%>
-                                    <%--<tr role="row" class="even">--%>
-                                        <%--<td class="sorting_1">2000</td>--%>
-                                        <%--<td>Tempo</td>--%>
-                                        <%--<td>节奏</td>--%>
-                                        <%--<td>--%>
-
-                                            <%--<a href="#">--%>
-
-                                                <%--<span class="glyphicon glyphicon-pencil"></span>--%>
-                                                <%--<span class="glyphicon-class">编辑</span>--%>
-
-                                            <%--</a>--%>
-                                            <%--<a href="#">--%>
-                                                <%--<span class="glyphicon glyphicon-remove"></span>--%>
-                                                <%--<span class="glyphicon-class">删除</span>--%>
-                                            <%--</a>--%>
-                                        <%--</td>--%>
-                                    <%--</tr>--%>
-                                    <%--</tbody>--%>
-
-                                <%--</table>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="row">--%>
-                            <%--<div class="col-sm-5">--%>
-                                <%--<div class="dataTables_info" id="example2_info" role="status" aria-live="polite">--%>
-                                    <%--总共两条记录--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                            <%--<div class="col-sm-7">--%>
-                                <%--<div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">--%>
-                                    <%--<ul class="pagination">--%>
-                                        <%--<li class="paginate_button previous disabled" id="example2_previous"><a href="#"--%>
-                                                                                                                <%--aria-controls="example2"--%>
-                                                                                                                <%--data-dt-idx="0"--%>
-                                                                                                                <%--tabindex="0">上一页</a>--%>
-                                        <%--</li>--%>
-                                        <%--<li class="paginate_button active"><a href="#" aria-controls="example2"--%>
-                                                                              <%--data-dt-idx="1" tabindex="0">1</a></li>--%>
-                                        <%--<li class="paginate_button "><a href="#" aria-controls="example2"--%>
-                                                                        <%--data-dt-idx="2" tabindex="0">2</a></li>--%>
-                                        <%--<li class="paginate_button "><a href="#" aria-controls="example2"--%>
-                                                                        <%--data-dt-idx="3" tabindex="0">3</a></li>--%>
-                                        <%--<li class="paginate_button "><a href="#" aria-controls="example2"--%>
-                                                                        <%--data-dt-idx="4" tabindex="0">4</a></li>--%>
-                                        <%--<li class="paginate_button "><a href="#" aria-controls="example2"--%>
-                                                                        <%--data-dt-idx="5" tabindex="0">5</a></li>--%>
-                                        <%--<li class="paginate_button "><a href="#" aria-controls="example2"--%>
-                                                                        <%--data-dt-idx="6" tabindex="0">6</a></li>--%>
-                                        <%--<li class="paginate_button next" id="example2_next"><a href="#"--%>
-                                                                                               <%--aria-controls="example2"--%>
-                                                                                               <%--data-dt-idx="7"--%>
-                                                                                               <%--tabindex="0">后一页</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <!-- /.box-body -->
             </div>
-            <!--弹出框-->
+            <!--弹出框(增加)-->
 
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" onclick="closeModal()" class="close" data-dismiss="modal"
+                                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">车辆型号增加</h4>
                         </div>
                         <div class="modal-body">
-                           <!--正文-->
-                            <form>
+                            <!--正文-->
+                            <form id="modalForm">
                                 <div class="form-group">
                                     <label>品牌</label>
-                                    <input type="text" class="form-control" name="brand" placeholder="品牌" value="Ford" disabled>
+                                    <input type="hidden" name="modelId" id="modalId">
+                                    <input type="text" id="modalBrand" class="form-control" name="brand"
+                                           placeholder="品牌">
                                     <label>年份</label>
-                                    <input type="text" class="form-control" name="year" placeholder="年份">
+                                    <input type="text" class="form-control" id="modalYear" name="year" placeholder="年份">
                                     <label>车辆型号</label>
-                                    <input type="text" class="form-control" name="model" placeholder="车辆型号">
+                                    <input type="text" class="form-control" id="modalModel" name="model"
+                                           placeholder="车辆型号">
 
+                                </div>
+                                <div class="callout callout-danger" id="faild" hidden>
+                                </div>
+                                <div class="callout callout-success" hidden>
+                                    <p>添加成功</p>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <button type="button" class="btn btn-primary">确定</button>
+                            <button type="button" id="btn1" class="btn btn-primary" onclick="addModel()">确定</button>
+                            <button type="button" id="btn2" class="btn btn-primary" onclick="updateModel()">确定</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <%--弹出框(编辑)
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" onclick="closeModal()" class="close" data-dismiss="modal"
+                                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" >车辆型号编辑</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--正文-->
+                            <form id="modalForm1">
+                                <div class="form-group">
+                                    <label>品牌</label>
+                                    <input type="text" id="modalBrand" class="form-control" name="brand"
+                                           placeholder="品牌">
+                                    <label>年份</label>
+                                    <input type="text" class="form-control" id="modalYear" name="year" placeholder="年份">
+                                    <label>车辆型号</label>
+                                    <input type="text" class="form-control" id="modalModel" name="model"
+                                           placeholder="车辆型号">
+
+                                </div>
+                                <div class="callout callout-success" hidden>
+                                    <h4>成功</h4>
+
+                                    <p>添加成功</p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" onclick="addModel()">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>--%>
 
         </section>
         <!-- /.content -->
@@ -367,21 +297,173 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.0 -->
-<script src="/admin/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="${pageContext.request.contextPath }/admin/plugins/jQuery/jQuery-2.2.0.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="/admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath }/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/admin/dist/js/app.min.js"></script>
+<script src="${pageContext.request.contextPath }/admin/dist/js/app.min.js"></script>
 
 <script>
 
-       function changeBrand(o) {
-           var value=$(o).find("option:selected").text();
-           var url="/admin/model/list"
-            $.post(url,{"brand":value},function (data) {
-                
-            });
-       };
+    function changeBrand(o) {
+        //可以用json方式,但是操作太复杂
+        var value = $(o).find("option:selected").val();
+        if ($.trim(value) == "") {
+            //alert("asdassda");
+            return;
+        }
+
+        var url = "${pageContext.request.contextPath }/admin/model/list.do"
+        $.post(url, {"brand": value}, function (data) {
+            var header = $(".box-header");
+            //先删除原来存在,不然重复叠加
+            header.next(".box-body").remove();
+            header.after(data);
+        });
+
+
+    };
+
+
+    function toAddModel() {
+        //按钮2隐藏,按钮1出现
+        $("#btn2").hide();
+        $("#btn1").show();
+        $("#myModalLabel").text("增加车型");
+
+        var value = $("select").find("option:selected").val();
+        $("#modalBrand").val(value);
+        $("#myModal").modal();
+    }
+
+    function addModel() {
+
+
+        var strData = $("#modalForm").serialize();
+        // alert(data);
+        var url = "${pageContext.request.contextPath }/admin/model/add.do";
+        $.post(url, strData, function (data) {
+            //alert(data.resultCode);
+            if (data.resultCode == "1") {
+                $("#modalForm div:first-child").hide();
+                var $p=$("<p>添加成功</p>");
+                $("#modalForm div:last-child").append($p).show();
+                $(".modal-footer").hide();
+                //刷新当前数据
+                $select=$("select");
+                changeBrand($select);
+
+
+            }else{
+                var $p=$("<p></p>").text(data.errDesc);
+                $("#faild").append($p);
+            }
+
+        }, "json");
+        /*var json={
+         "brand":"Audi",
+         "model":"x6",
+         "year":2009
+         };*/
+        /*$.ajax({
+         url: url,
+         cache: false,
+         contentType:"application/json; charset=utf-8",
+         data:json,
+         type:"post",
+         success: function(data){
+         //$("#results").append(html);
+         alert(data);
+         }
+         });*/
+
+    }
+
+    function closeModal() {
+        $("#modalForm div:first-child").show();
+        $("#modalForm div:last-child").hide();
+        $(".modal-footer").show();
+        $("#modalYear").val('');
+        $("#modalModel").val('');
+        $("#modalId").val('');
+
+        $("#modalForm div:last-child").empty();
+        $("#faild").empty();
+    }
+
+    function editModel(modelId) {
+        $("#myModalLabel").text("更新车型");
+        //按钮2隐藏,按钮1出现
+        $("#btn2").show();
+        $("#btn1").hide();
+
+
+        var url = "${pageContext.request.contextPath }/admin/model/toEdit.do";
+        $.post(url,
+                {
+                    "modelId": modelId
+                },
+                function (data) {
+                    $("#myModal").modal();
+                    if(data.resultCode=="1"){
+                        $("#modalBrand").val(data.result.brand);
+                        $("#modalYear").val(data.result.year);
+                        $("#modalModel").val(data.result.model);
+                        $("#modalId").val(data.result.modelId);
+
+                        $select=$("select");
+                        changeBrand($select);
+                    }else{
+                        var $p=$("<p></p>").text(data.errDesc);
+                        $("#faild").append($p);
+                    }
+                },
+                "json"
+        )
+    }
+
+    function updateModel() {
+        var strData = $("#modalForm").serialize();
+        // alert(data);
+        var url = "${pageContext.request.contextPath }/admin/model/update.do";
+        $.post(url, strData, function (data) {
+            //alert(data.resultCode);
+            if (data.resultCode == "1") {
+                $("#modalForm div:first-child").hide();
+                var $p=$("<p>更新成功</p>");
+                $("#modalForm div:last-child").append($p).show();
+                $(".modal-footer").hide();
+
+
+            }
+
+        }, "json")
+    }
+    
+    function deleteModel(modelId) {
+c
+        var c=confirm("确定删除?");
+        if(c==true){
+            var url="${pageContext.request.contextPath }/admin/model/delete.do";
+            $.post(url,
+                    {
+                        "modelId": modelId
+                    },
+                    function (data) {
+
+                        if(data.resultCode=="1"){
+                            alert("删除成功!");
+                            $select=$("select");
+                            changeBrand($select);
+
+                        }else{
+                            alert(data.errDesc);
+                        }
+                    },
+                    "json"
+            )
+        }
+    }
 
 
 </script>

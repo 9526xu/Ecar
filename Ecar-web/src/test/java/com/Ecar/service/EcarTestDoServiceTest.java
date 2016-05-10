@@ -1,7 +1,9 @@
 package com.Ecar.service;
 
 import com.Ecar.common.utils.SpringUtil;
+import com.Ecar.dal.model.EcarModelDo;
 import com.Ecar.dal.model.EcarTestDo;
+import com.Ecar.dto.ModelUpdateForm;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -32,17 +34,28 @@ public class EcarTestDoServiceTest {
 
     @Test
     public void testUpdate(){
-        IEcarTestDoService service= (IEcarTestDoService) SpringUtil.applicationContext
-                .getBean(IEcarTestDoService.SERVICE_NAME);
+        /*IEcarTestDoService service= (IEcarTestDoService) SpringUtil.applicationContext
+                .getBean(IEcarTestDoService.SERVICE_NAME);*/
 
-        EcarTestDo ecarTestDo=new EcarTestDo();
+        /*EcarTestDo ecarTestDo=new EcarTestDo();
 
 
         ecarTestDo.setId(1);
         ecarTestDo.setName("张宝");
         ecarTestDo.setAge(23);
 
-        service.update(ecarTestDo);
+        service.update(ecarTestDo);*/
+
+        IEcarModelService service = (IEcarModelService) SpringUtil.applicationContext.getBean(IEcarModelService.SERVICE_NAME);
+
+        ModelUpdateForm form=new ModelUpdateForm();
+        form.setModelId(7271);
+        form.setModel("mx-66");
+        form.setBrand("Aptera");
+        form.setYear(1988);
+
+        service.updateModel(form);
+
     }
 
     @Test

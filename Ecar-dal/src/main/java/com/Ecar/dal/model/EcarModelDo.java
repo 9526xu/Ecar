@@ -15,6 +15,16 @@ public class EcarModelDo {
         this.brand = brand;
     }
 
+    public EcarModelDo() {
+    }
+
+    public EcarModelDo(String model,Integer modelId,   String modelCn) {
+        this.modelId = modelId;
+
+        this.model = model;
+        this.modelCn = modelCn;
+    }
+
     public Integer getModelId() {
         return modelId;
     }

@@ -25,4 +25,11 @@ public class EcarModelDaoImpl extends CommonDaoImpl<EcarModelDo> implements IEca
         List<EcarModelDo> list= (List<EcarModelDo>) this.getHibernateTemplate().find(hql);
         return list;
     }
+
+    @Override
+    public List<EcarModelDo> getModelsByBrand(String brand) {
+        String hql=" from EcarModelDo where brand=? order by model asc ";
+
+        return (List<EcarModelDo>) this.getHibernateTemplate().find(hql,brand);
+    }
 }
