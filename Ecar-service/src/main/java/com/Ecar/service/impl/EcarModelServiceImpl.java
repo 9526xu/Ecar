@@ -1,23 +1,19 @@
 package com.Ecar.service.impl;
 
 import com.Ecar.common.utils.BizResult;
+import com.Ecar.common.utils.PageResult;
 import com.Ecar.dal.dao.IEcarModelDao;
-import com.Ecar.dal.dao.IEcarTestDoDao;
 import com.Ecar.dal.model.EcarModelDo;
-import com.Ecar.dal.model.EcarTestDo;
-import com.Ecar.dto.ModelForm;
-import com.Ecar.dto.ModelUpdateForm;
+import com.Ecar.dto.model.ModelForm;
+import com.Ecar.dto.model.ModelPageForm;
+import com.Ecar.dto.model.ModelUpdateForm;
 import com.Ecar.service.IEcarModelService;
-import com.Ecar.service.IEcarTestDoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by xiaohei on 16/4/25.
@@ -107,5 +103,13 @@ public class EcarModelServiceImpl implements IEcarModelService {
             bizResult.setErrMsg("删除异常");
         }
         return bizResult;
+    }
+
+    @Override
+    public PageResult<EcarModelDo> getModelsByBrandWithPage(ModelPageForm form) {
+        PageResult<EcarModelDo> result=modelDao.getModelsByBrandWithPage(form.getPageNo(),form.getPageSize(),form.getBrand());
+
+
+        return result;
     }
 }

@@ -1,9 +1,11 @@
 package com.Ecar.service;
 
 import com.Ecar.common.utils.BizResult;
+import com.Ecar.common.utils.PageResult;
 import com.Ecar.dal.model.EcarModelDo;
-import com.Ecar.dto.ModelForm;
-import com.Ecar.dto.ModelUpdateForm;
+import com.Ecar.dto.model.ModelForm;
+import com.Ecar.dto.model.ModelPageForm;
+import com.Ecar.dto.model.ModelUpdateForm;
 
 
 import java.util.List;
@@ -25,4 +27,6 @@ public interface IEcarModelService {
     BizResult updateModel(ModelUpdateForm form);
 
     BizResult deleteModel(Integer modelId);
+
+    PageResult<EcarModelDo> getModelsByBrandWithPage(ModelPageForm form);
 }

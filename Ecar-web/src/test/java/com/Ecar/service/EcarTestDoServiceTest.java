@@ -1,9 +1,8 @@
 package com.Ecar.service;
 
 import com.Ecar.common.utils.SpringUtil;
-import com.Ecar.dal.model.EcarModelDo;
 import com.Ecar.dal.model.EcarTestDo;
-import com.Ecar.dto.ModelUpdateForm;
+import com.Ecar.dto.model.ModelUpdateForm;
 import org.junit.Test;
 
 import java.util.ArrayList;

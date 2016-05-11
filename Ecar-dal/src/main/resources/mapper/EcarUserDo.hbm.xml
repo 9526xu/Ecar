@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.Ecar.dal.model.EcarUserDo" table="ecar_user" schema="ecar">
-        <id name="userId" column="userID"/>
+        <id name="userId" column="userID">
+            <generator class="uuid"></generator>
+        </id>
         <property name="userName" column="userName"/>
         <property name="loginPwd" column="loginPwd"/>
         <property name="mobile" column="mobile"/>

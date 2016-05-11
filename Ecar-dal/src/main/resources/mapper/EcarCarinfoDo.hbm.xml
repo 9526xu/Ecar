@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.Ecar.dal.model.EcarCarinfoDo" table="ecar_carinfo" schema="ecar">
-        <id name="carId" column="carID"/>
+        <id name="carId" column="carID">
+            <generator class="uuid"></generator>
+        </id>
         <property name="name" column="name"/>
         <property name="brand" column="brand"/>
         <property name="province" column="province"/>
@@ -17,5 +19,7 @@
         <property name="upStatus" column="upStatus"/>
         <property name="carStatus" column="carStatus"/>
         <property name="amount" column="amount"/>
+        <property name="ownerId" column="ownerId"></property>
+        <property name="buyUserId" column="buyUserId"></property>
     </class>
 </hibernate-mapping>

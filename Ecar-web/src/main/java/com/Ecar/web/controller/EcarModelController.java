@@ -3,10 +3,12 @@ package com.Ecar.web.controller;
 import com.Ecar.common.utils.BizResult;
 import com.Ecar.common.utils.JsonFormValidator;
 import com.Ecar.common.utils.JsonResult;
+import com.Ecar.common.utils.PageResult;
 import com.Ecar.dal.model.EcarModelDo;
-import com.Ecar.dto.ModelForm;
-import com.Ecar.dto.ModelListForm;
-import com.Ecar.dto.ModelUpdateForm;
+import com.Ecar.dto.model.ModelForm;
+import com.Ecar.dto.model.ModelListForm;
+import com.Ecar.dto.model.ModelPageForm;
+import com.Ecar.dto.model.ModelUpdateForm;
 import com.Ecar.service.IEcarModelService;
 
 import org.apache.commons.lang.StringUtils;
@@ -14,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -40,12 +41,13 @@ public class EcarModelController {
         return "admin/car_model";
     }
     @RequestMapping("/list.do")
-    public String modelList(ModelListForm form, Model model){
+    @ResponseBody
+    public Object modelList(ModelListForm form, Model model){
 
         List<EcarModelDo> list=modelService.getModelsByBrand(form.getBrand());
-        model.addAttribute("modelList",list);
+        //model.addAttribute("modelList",list);
 
-        return "admin/model_list";
+        return list;
     }
     @RequestMapping(value = "/add.do",method = RequestMethod.POST)
     @ResponseBody
@@ -113,6 +115,14 @@ public class EcarModelController {
         buildJsonResult(bizResult,jsonResult);
 
         return jsonResult.getMap();
+    }
+
+    @RequestMapping("/listPage.do")
+    public String modelListByPage(ModelPageForm form,Model model){
+        PageResult<EcarModelDo> pageResult=modelService.getModelsByBrandWithPage(form);
+        model.addAttribute("pageResult",pageResult);
+        return "admin/model_list";
+
     }
 
 }

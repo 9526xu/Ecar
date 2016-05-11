@@ -1,5 +1,6 @@
 package com.Ecar.dal.dao;
 
+import com.Ecar.common.utils.PageResult;
 import com.Ecar.common.utils.SpringUtil;
 import com.Ecar.dal.model.EcarModelDo;
 import com.Ecar.dal.model.EcarTestDo;
@@ -47,5 +48,14 @@ public class EcarModelDaoTest {
         ecarModelDo.setModel("mx-666");
 
         dao.updateEntity(ecarModelDo);
+    }
+
+    @Test
+    public void testGetModelByBrandWithPage(){
+        IEcarModelDao dao= (IEcarModelDao) SpringUtil.applicationContext.getBean(IEcarModelDao.SERVICE_NAME);
+
+        PageResult<EcarModelDo>result=dao.getModelsByBrandWithPage(1,10,"Audi");
+
+        System.out.println(result);
     }
 }

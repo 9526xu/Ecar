@@ -21,7 +21,7 @@
             </div>
             <div class="col-sm-6"></div>
         </div>
-        <div class="row">
+        <div class="row" >
             <div class="col-sm-12">
 
                 <table id="example2" class="table  table-bordered table-hover  dataTable" role="grid"
@@ -51,7 +51,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${requestScope.modelList}" var="model">
+                    <c:forEach items="${requestScope.pageResult.result}" var="model">
                         <tr role="row" >
                             <td>${model.modelId}</td>
                             <td>${model.year}</td>
@@ -113,39 +113,10 @@
                 </table>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
-                    总共两条记录
-                </div>
-            </div>
-            <div class="col-sm-7">
-                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                        <li class="paginate_button previous disabled" id="example2_previous"><a href="#"
-                                                                                                aria-controls="example2"
-                                                                                                data-dt-idx="0"
-                                                                                                tabindex="0">上一页</a>
-                        </li>
-                        <li class="paginate_button active"><a href="#" aria-controls="example2"
-                                                              data-dt-idx="1" tabindex="0">1</a></li>
-                        <li class="paginate_button "><a href="#" aria-controls="example2"
-                                                        data-dt-idx="2" tabindex="0">2</a></li>
-                        <li class="paginate_button "><a href="#" aria-controls="example2"
-                                                        data-dt-idx="3" tabindex="0">3</a></li>
-                        <li class="paginate_button "><a href="#" aria-controls="example2"
-                                                        data-dt-idx="4" tabindex="0">4</a></li>
-                        <li class="paginate_button "><a href="#" aria-controls="example2"
-                                                        data-dt-idx="5" tabindex="0">5</a></li>
-                        <li class="paginate_button "><a href="#" aria-controls="example2"
-                                                        data-dt-idx="6" tabindex="0">6</a></li>
-                        <li class="paginate_button next" id="example2_next"><a href="#"
-                                                                               aria-controls="example2"
-                                                                               data-dt-idx="7"
-                                                                               tabindex="0">后一页</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <input type="hidden" id="totalPage" value="${pageResult.totalPage}">
+        <input type="hidden" id="pageNo" value="${pageResult.pageNo}">
+        <input type="hidden" id="totalCount" value="${requestScope.pageResult.totalCount}">
     </div>
 </div>
+
+

@@ -15,9 +15,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/font-awesome-4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/ionicons-2.0.1/css/ionicons.min.css">
     <!--Theme style-->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -25,6 +25,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/dist/css/skins/skin-blue.min.css">
+    <%--jpaginate分页插件--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/jpaginate/css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,14 +90,16 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg"
+                                 class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg"
+                                     class="img-circle" alt="User Image">
 
                                 <p>
                                     使用者姓名
@@ -128,7 +132,8 @@ desired effect
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle"
+                         alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>使用者姓名</p>
@@ -142,17 +147,17 @@ desired effect
             <ul class="sidebar-menu">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li><a href="#"><i class="fa fa-link"></i> <span>会员管理</span></a></li>
+                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>会员管理</span></a></li>
                 <li><a href="#"><i class="fa fa-link"></i> <span>订单管理</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>车辆管理</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="car_list.html">车辆列表</a></li>
-                        <li><a href="car_add.html">车辆增加</a></li>
+                        <li><a href="${pageContext.request.contextPath }/admin/carInfo/listHome.do">车辆列表</a></li>
+                        <li><a href="${pageContext.request.contextPath }/admin/carInfo/addHomde.do">车辆增加</a></li>
                     </ul>
                 </li>
                 <!--品牌管理-->
-                <li class="active"><a href="${pageContext.request.contextPath }/admin/model/home"><i class="fa fa-link"></i> <span>品牌管理</span></a></li>
+                <li><a href="${pageContext.request.contextPath }/admin/model/home"><i class="fa fa-link"></i> <span>品牌管理</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -168,7 +173,8 @@ desired effect
                 <small>车辆品牌以及型号管理</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/admin/index.jsp"><i class="fa fa-dashboard"></i> 主页</a></li>
+                <li><a href="${pageContext.request.contextPath }/admin/index.jsp"><i class="fa fa-dashboard"></i> 主页</a>
+                </li>
                 <li class="active">品牌管理</li>
             </ol>
         </section>
@@ -192,6 +198,52 @@ desired effect
                         </div>
                     </div>
 
+
+
+
+                </div>
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
+
+                            </div>
+                        </div>
+                        <%--<div class="col-sm-7">
+                            <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                <ul class="pagination">
+                                    <li class="paginate_button previous disabled" id="example2_previous"><a href="#"
+                                                                                                            aria-controls="example2"
+                                                                                                            data-dt-idx="0"
+                                                                                                            tabindex="0">上一页</a>
+                                    </li>
+                                    <li class="paginate_button active"><a href="#" aria-controls="example2"
+                                                                          data-dt-idx="1" tabindex="0">1</a></li>
+                                    <li class="paginate_button "><a href="#" aria-controls="example2"
+                                                                    data-dt-idx="2" tabindex="0">2</a></li>
+                                    <li class="paginate_button "><a href="#" aria-controls="example2"
+                                                                    data-dt-idx="3" tabindex="0">3</a></li>
+                                    <li class="paginate_button "><a href="#" aria-controls="example2"
+                                                                    data-dt-idx="4" tabindex="0">4</a></li>
+                                    <li class="paginate_button "><a href="#" aria-controls="example2"
+                                                                    data-dt-idx="5" tabindex="0">5</a></li>
+                                    <li class="paginate_button "><a href="#" aria-controls="example2"
+                                                                    data-dt-idx="6" tabindex="0">6</a></li>
+                                    <li class="paginate_button next" id="example2_next"><a href="#"
+                                                                                           aria-controls="example2"
+                                                                                           data-dt-idx="7"
+                                                                                           tabindex="0">后一页</a></li>
+                                </ul>
+                            </div>
+                        </div>--%>
+                        <%--jpaginate分页--%>
+                        <div class="col-sm-7">
+
+                            <div id="page">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -302,8 +354,11 @@ desired effect
 <script src="${pageContext.request.contextPath }/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="${pageContext.request.contextPath }/admin/dist/js/app.min.js"></script>
+<%--jpaginate分页插件--%>
+<script src="${pageContext.request.contextPath }/admin/jpaginate/jquery.paginate.js"></script>
 
 <script>
+
 
     function changeBrand(o) {
         //可以用json方式,但是操作太复杂
@@ -313,16 +368,64 @@ desired effect
             return;
         }
 
-        var url = "${pageContext.request.contextPath }/admin/model/list.do"
-        $.post(url, {"brand": value}, function (data) {
+        //分页地址
+        var urlPage = "${pageContext.request.contextPath }/admin/model/listPage.do";
+
+
+
+
+        $.post(urlPage, {
+            "brand": value,
+
+        }, function (data) {
             var header = $(".box-header");
             //先删除原来存在,不然重复叠加
             header.next(".box-body").remove();
             header.after(data);
+
+            //分页
+            var pageNo = $("#pageNo").val();
+            var totalPage = $("#totalPage").val();
+            var totalCount=$("#totalCount").val();
+
+            var $p2=$("<p>总共有"+totalCount+"条记录</p>");
+            $("#example2_info").empty().append($p2);
+
+            $("#page").paginate({
+                count: totalPage,
+                start: pageNo,
+                display: 5,
+                border: false,
+                text_color: '#79B5E3',
+                background_color: 'none',
+                text_hover_color: '#2573AF',
+                background_hover_color: 'none',
+                images: false,
+                mouse: 'press',
+                onChange: function (page) {
+                    //location.href = urlPage + "?pageNo=" + page + "&brand=" + value;
+                    //getDataByPage(page);
+                    //alert(page);
+                    //先删除原来存在,不然重复叠加
+                    $.post(urlPage,{
+                        "brand": value,
+                        "pageNo":page,
+
+                    },function (data) {
+                        var header = $(".box-header");
+                        //先删除原来存在,不然重复叠加
+                        header.next(".box-body").remove();
+                        header.after(data);
+                    });
+
+
+                }
+            });
         });
 
 
-    };
+    }
+    ;
 
 
     function toAddModel() {
@@ -346,16 +449,16 @@ desired effect
             //alert(data.resultCode);
             if (data.resultCode == "1") {
                 $("#modalForm div:first-child").hide();
-                var $p=$("<p>添加成功</p>");
+                var $p = $("<p>添加成功</p>");
                 $("#modalForm div:last-child").append($p).show();
                 $(".modal-footer").hide();
                 //刷新当前数据
-                $select=$("select");
+                $select = $("select");
                 changeBrand($select);
 
 
-            }else{
-                var $p=$("<p></p>").text(data.errDesc);
+            } else {
+                var $p = $("<p></p>").text(data.errDesc);
                 $("#faild").append($p);
             }
 
@@ -405,16 +508,16 @@ desired effect
                 },
                 function (data) {
                     $("#myModal").modal();
-                    if(data.resultCode=="1"){
+                    if (data.resultCode == "1") {
                         $("#modalBrand").val(data.result.brand);
                         $("#modalYear").val(data.result.year);
                         $("#modalModel").val(data.result.model);
                         $("#modalId").val(data.result.modelId);
 
-                        $select=$("select");
+                        $select = $("select");
                         changeBrand($select);
-                    }else{
-                        var $p=$("<p></p>").text(data.errDesc);
+                    } else {
+                        var $p = $("<p></p>").text(data.errDesc);
                         $("#faild").append($p);
                     }
                 },
@@ -430,33 +533,39 @@ desired effect
             //alert(data.resultCode);
             if (data.resultCode == "1") {
                 $("#modalForm div:first-child").hide();
-                var $p=$("<p>更新成功</p>");
+                var $p = $("<p>更新成功</p>");
                 $("#modalForm div:last-child").append($p).show();
                 $(".modal-footer").hide();
 
 
+                //刷新当前数据
+                $select = $("select");
+                changeBrand($select);
+            }else {
+                var $p = $("<p></p>").text(data.errDesc);
+                $("#faild").append($p);
             }
 
         }, "json")
     }
-    
+
     function deleteModel(modelId) {
-c
-        var c=confirm("确定删除?");
-        if(c==true){
-            var url="${pageContext.request.contextPath }/admin/model/delete.do";
+        c
+        var c = confirm("确定删除?");
+        if (c == true) {
+            var url = "${pageContext.request.contextPath }/admin/model/delete.do";
             $.post(url,
                     {
                         "modelId": modelId
                     },
                     function (data) {
 
-                        if(data.resultCode=="1"){
+                        if (data.resultCode == "1") {
                             alert("删除成功!");
-                            $select=$("select");
+                            $select = $("select");
                             changeBrand($select);
 
-                        }else{
+                        } else {
                             alert(data.errDesc);
                         }
                     },

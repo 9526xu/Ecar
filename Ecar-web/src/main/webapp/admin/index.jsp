@@ -16,9 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/font-awesome-4.4.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/ionicons-2.0.1/css/ionicons.min.css">
    <!--Theme style-->
   <link rel="stylesheet" href="${pageContext.request.contextPath }/admin/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -149,8 +149,8 @@ desired effect
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>车辆管理</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="car_list.html">车辆列表</a></li>
-            <li><a href="car_add.html">车辆增加</a></li>
+            <li><a href="${pageContext.request.contextPath }/admin/carInfo/listHome.do">车辆列表</a></li>
+            <li><a href="${pageContext.request.contextPath }/admin/carInfo/addHomde.do">车辆增加</a></li>
           </ul>
         </li>
         <!--品牌管理-->
