@@ -6,7 +6,7 @@
 
     <class name="com.Ecar.dal.model.EcarCarinfoDo" table="ecar_carinfo" schema="ecar">
         <id name="carId" column="carID">
-            <generator class="uuid"></generator>
+            <generator class="assigned"></generator>
         </id>
         <property name="name" column="name"/>
         <property name="brand" column="brand"/>

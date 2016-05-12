@@ -91,7 +91,7 @@ desired effect
               <!-- The user image in the navbar-->
               <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">${user.userName}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -99,7 +99,7 @@ desired effect
                 <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  使用者姓名
+                  ${user.userName}
                   <small>注册日期</small>
                 </p>
               </li>
@@ -110,7 +110,7 @@ desired effect
                   <a href="#" class="btn btn-default btn-flat">设置</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">登出</a>
+                  <a href="${pageContext.request.contextPath }/admin/common/adminLogOut" class="btn btn-default btn-flat">登出</a>
                 </div>
               </li>
             </ul>
@@ -132,7 +132,7 @@ desired effect
           <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>使用者姓名</p>
+          <p>${user.userName}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -166,8 +166,8 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        主页描述
-        <small>详细描述</small>
+        我是主页君
+        <small>这是一家神奇网站,二手车就找我</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.jsp"><i class="fa fa-dashboard"></i> 主页</a></li>

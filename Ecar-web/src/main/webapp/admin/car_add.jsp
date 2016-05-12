@@ -98,7 +98,7 @@ desired effect
                             <img src="${pageContext.request.contextPath }/admin/dist/img/user2-160x160.jpg"
                                  class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs">${user.userName}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -107,7 +107,7 @@ desired effect
                                      class="img-circle" alt="User Image">
 
                                 <p>
-                                    使用者姓名
+                                    ${user.userName}
                                     <small>注册日期</small>
                                 </p>
                             </li>
@@ -118,7 +118,7 @@ desired effect
                                     <a href="#" class="btn btn-default btn-flat">设置</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">登出</a>
+                                    <a href="${pageContext.request.contextPath }/admin/common/adminLogOut" class="btn btn-default btn-flat">登出</a>
                                 </div>
                             </li>
                         </ul>
@@ -141,7 +141,7 @@ desired effect
                          alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>使用者姓名</p>
+                    <p>${user.userName}</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -236,7 +236,7 @@ desired effect
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" id="carForm" method="post" action="${pageContext.request.contextPath }/admin/carInfo/add.do">
                     <%--车辆拥有者id--%>
                     <input type="hidden" name="ownerId" id="owner">
                     <div class="box-body">
@@ -246,7 +246,7 @@ desired effect
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" onchange="changeBrand(this)">
+                                    <select class="form-control" name="brand" onchange="changeBrand(this)">
                                         <option value="">请选择</option>
                                         <c:forEach items="${modelList}" var="brand">
                                             <option value="${brand.brand}">${brand.brand}</option>
@@ -256,7 +256,7 @@ desired effect
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" id="modelSelect">
+                                    <select class="form-control" name="model" id="modelSelect">
                                         <option value="">请选择</option>
 
                                     </select>
@@ -271,7 +271,7 @@ desired effect
                                     <label>车辆价格</label>
                                     <div class="input-group">
                                         <span class="input-group-addon">¥</span>
-                                        <input type="number" class="form-control">
+                                        <input type="number" name="amount" class="form-control">
                                         <span class="input-group-addon">.00</span>
                                     </div>
 
@@ -299,7 +299,7 @@ desired effect
                                 <div class="form-group">
 
 
-                                    <select class="form-control" id="provinceSelect" onchange="changeProvince(this)">
+                                    <select class="form-control" name="province" id="provinceSelect" onchange="changeProvince(this)">
                                         <option>请选择</option>
                                         <c:forEach items="${provinceList}" var="province">
                                             <option value="${province.regId}">${province.name}</option>
@@ -313,14 +313,14 @@ desired effect
                             <div class="col-md-6">
                                 <div class="form-group">
 
-                                    <select class="form-control" id="citySelect">
+                                    <select class="form-control" name="city" id="citySelect">
 
                                     </select>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <%--<div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>车辆价格</label>
@@ -331,7 +331,7 @@ desired effect
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <!--图片上传,采用百度图片上传插件-->
 
                         <div class="row">
@@ -365,13 +365,14 @@ desired effect
 
                         </div>
 
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>车辆其他信息</label>
                                     <div class="box">
                                         <div class="box-body pad">
-                                        <textarea class="textarea" placeholder="Place some text here"
+                                        <textarea class="textarea" name="otherInfo" placeholder="Place some text here"
                                                   style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                         </div>
                                     </div>

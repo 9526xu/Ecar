@@ -15,4 +15,6 @@ public interface IEcarUserService {
     BizResult<EcarUserDo> getUserByTel(String mobile);
 
     BizResult saveUser(EcarUserDo userDo);
+
+    EcarUserDo getUserByUserName(String name);
 }

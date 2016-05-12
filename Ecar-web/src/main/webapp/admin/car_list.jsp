@@ -103,7 +103,7 @@ desired effect
                                      class="img-circle" alt="User Image">
 
                                 <p>
-                                    使用者姓名
+                                    ${user.userName}
                                     <small>注册日期</small>
                                 </p>
                             </li>
@@ -114,7 +114,7 @@ desired effect
                                     <a href="#" class="btn btn-default btn-flat">设置</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">登出</a>
+                                    <a href="${pageContext.request.contextPath }/admin/common/adminLogOut" class="btn btn-default btn-flat">登出</a>
                                 </div>
                             </li>
                         </ul>
@@ -137,7 +137,7 @@ desired effect
                          alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>使用者姓名</p>
+                    <p>${user.userName}</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>

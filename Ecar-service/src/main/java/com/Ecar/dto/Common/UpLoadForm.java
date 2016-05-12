@@ -6,8 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
  * Created by xiaohei on 16/5/11.
  */
 public class UpLoadForm {
-    private MultipartFile[] file;
+    private MultipartFile file;
     private String name;
+
 
     public String getName() {
         return name;
@@ -17,11 +18,13 @@ public class UpLoadForm {
         this.name = name;
     }
 
-    public MultipartFile[] getFile() {
+    public MultipartFile getFile() {
         return file;
     }
 
-    public void setFile(MultipartFile[] file) {
+    public void setFile(MultipartFile file) {
         this.file = file;
     }
+
+
 }

@@ -4,6 +4,7 @@ import com.Ecar.common.utils.PageResult;
 import com.Ecar.dal.model.EcarCarinfoDo;
 import com.Ecar.dal.model.EcarModelDo;
 import com.Ecar.dal.model.EcarRegionDo;
+import com.Ecar.dto.carInfo.CarAddForm;
 import com.Ecar.dto.carInfo.CarInfoQueryForm;
 import com.Ecar.service.ICommonService;
 import com.Ecar.service.IEcarCarInfoService;
@@ -68,5 +69,15 @@ public class EcarCarInfoController {
         List<EcarRegionDo> regionList=commonService.getProvinces();
         model.addAttribute("provinceList",regionList);
         return "admin/car_add";
+    }
+
+    @RequestMapping("/add.do")
+    public String addCar(CarAddForm form,Model model){
+
+        carInfoService.saveCarInfo(form);
+
+
+        return "forward://admin/carInfo/listHome.do";
+
     }
 }

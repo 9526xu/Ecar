@@ -55,4 +55,16 @@ public class EcarUserImpl implements IEcarUserService {
         }
         return bizResult;
     }
+
+    /**
+     * 根据用户名查找用户()
+     * @param name
+     * @return
+     */
+    @Override
+    @Deprecated
+    public EcarUserDo getUserByUserName(String name) {
+       // EcarUserDo ecarUserDo=userDao
+        return null;
+    }
 }

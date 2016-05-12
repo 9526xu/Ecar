@@ -4,6 +4,9 @@ package com.Ecar.dal.model;
  * Created by xiaohei on 16/4/27.
  */
 public class EcarCarinfoDo {
+
+
+
     private String carId;
     private String name;
     private String brand;

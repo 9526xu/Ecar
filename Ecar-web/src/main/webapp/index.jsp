@@ -18,12 +18,15 @@
     <%--<input type="file" name="file">
     <input type="file" name="file">--%>
     <input type="text" name="name">
-    <div id="uploader-demo">
-        <!--用来存放item-->
-        <div id="fileList" class="uploader-list"></div>
-        <div id="filePicker">选择图片</div>
-    </div>
+        <input type="text" name="age">
+        <input type="text" name="age">
     <input type="submit">
+
+        <div id="uploader-demo">
+            <!--用来存放item-->
+            <div id="fileList" class="uploader-list"></div>
+            <div id="filePicker">选择图片</div>
+        </div>
 
 </form>
 
@@ -89,6 +92,10 @@
 
                     $img.attr( 'src', src );
                 }, thumbnailWidth, thumbnailHeight );
+            });
+
+            uploader.on( 'uploadAccept', function( file, response ) {
+                alert(response.relativePath);
             });
         })
     })

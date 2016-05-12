@@ -5,7 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.Ecar.dal.model.EcarCarInfoPicDo" table="ecar_carInfo_pic" schema="ecar">
-        <id name="picId" column="picID"/>
+        <id name="picId" column="picID">
+            <generator class="uuid"></generator>
+        </id>
         <property name="carId" column="carID"/>
         <property name="picUrl" column="picURL"/>
     </class>

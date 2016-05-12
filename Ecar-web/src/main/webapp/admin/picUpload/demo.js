@@ -438,4 +438,15 @@ jQuery(function() {
 
     $upload.addClass( 'state-' + state );
     updateTotalProgress();
+
+    uploader.on( 'uploadAccept', function( file, response ) {
+        //alert(response.relativePath);
+        $hidden=$("<input/>");
+        $hidden.attr({
+            "name":"picPath",
+            "type":"hidden"
+        });
+        $hidden.val(response.relativePath);
+        $("#carForm").append($hidden);
+    });
 });
